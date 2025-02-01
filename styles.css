@@ -72,9 +72,7 @@
      Hero Section
      ========================================= */
   #hero {
-    /* Full viewport height for a striking introduction */
     height: 100vh;
-    /* Background image with dark overlay for contrast */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url('hero-placeholder.jpg') no-repeat center center/cover;
     display: flex;
@@ -83,6 +81,28 @@
     color: #fff;
     text-align: center;
     padding-top: 70px; /* Offset for the fixed header */
+  }
+  
+  /* Animate hero elements on page load */
+  .animate-on-load {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+  }
+  
+  .animate-on-load:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .hero-content h1 {
@@ -106,12 +126,13 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     font-size: 1rem;
   }
   
   .btn:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
   }
   
   .btn.secondary {
@@ -145,6 +166,20 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+  }
+  
+  /* =========================================
+     Fade-In Animation for Sections & Items
+     ========================================= */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   
   /* =========================================
