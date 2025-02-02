@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AutoGuardian Logo</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Container for the logo */
+    .logo {
+      width: 150px;
+      height: 200px;
+      position: relative;
+      margin: 20px;
+    }
+
+    /* Shield shape created with clip-path */
+    .shield {
+      width: 100%;
+      height: 100%;
+      background: #1a237e; /* Deep blue for trust and reliability */
+      clip-path: polygon(50% 0%, 100% 25%, 85% 100%, 15% 100%, 0% 25%);
+      position: relative;
+    }
+
+    /* Car silhouette inside the shield */
+    .car {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 20%;
+      background: #cfd8dc; /* Light metallic silver/gray */
+      border-radius: 10px 10px 2px 2px;
+    }
+
+    /* Car roof and window area using a pseudo-element */
+    .car::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      background: #cfd8dc;
+      border-radius: 20% 20% 0 0;
+    }
+
+    /* Wheels for the car */
+    .wheel {
+      position: absolute;
+      bottom: -10px;
+      width: 20px;
+      height: 20px;
+      background: #37474f; /* Darker tone for wheels */
+      border-radius: 50%;
+    }
+    .wheel.left {
+      left: 15%;
+    }
+    .wheel.right {
+      right: 15%;
+    }
+
+    /* Wordmark below the logo */
+    .wordmark {
+      font-size: 24px;
+      color: #1a237e;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <div class="shield">
+      <div class="car">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wordmark">AutoGuardian</div>
+</body>
+</html>
